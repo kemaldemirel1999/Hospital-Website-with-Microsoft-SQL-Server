@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Hastane.Models.ClinicModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2></h2>
+<body background="~/Images/clinic.jpg">
+</body>
+<p>
+    @Html.ActionLink("Add new Clinic", "Create","Clinic", null, new { @class = "btn btn-sm btn-success m5-1" })
+</p>
+<table class="jumbotron " border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HeadDoctorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeadDoctorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

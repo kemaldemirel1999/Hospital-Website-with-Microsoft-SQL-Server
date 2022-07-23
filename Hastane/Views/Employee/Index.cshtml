@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Hastane.Models.EmployeeModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2></h2>
+<body background="~/Images/employee.jpg">
+</body>
+<p>
+    @Html.ActionLink("Go to NURSEs Site\t", "Index", "Nurse", null, new { @class = "btn btn-sm btn-danger m1-1" })
+    @Html.ActionLink("Go to DOCTORs Site\t", "Index", "Doctor", null, new { @class = "btn btn-sm btn-danger m1-1" })
+    @Html.ActionLink("Go to MANAGERs Site\t", "Index", "Manager", null, new { @class = "btn btn-sm btn-danger m1-1" })
+    @Html.ActionLink("Go to LABORANTs Site\t", "Index", "Laborant", null, new { @class = "btn btn-sm btn-danger m1-1" })
+    @Html.ActionLink("Go to OTHER STAFFs Site\t", "Index", "Other_Staff", null, new { @class = "btn btn-sm btn-danger m1-1" })
+</p>
+<p>
+
+    @Html.ActionLink("Add new Employee\t", "Create", "Employee", null, new { @class = "btn btn-sm btn-success m5-1" })
+</p>
+<table class="jumbotron " border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)   
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit" ,"Employee" , new { @class = "btn btn-sm btn-info" })
+            @Html.ActionLink("Delete", "Delete","Employee", new { @class = "btn btn-sm btn-info" })
+        </td>
+    </tr>
+}
+</table>

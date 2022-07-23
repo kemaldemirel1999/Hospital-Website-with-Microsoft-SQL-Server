@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Hastane.Models.ManagerModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2></h2>
+<body background="~/Images/manager.jpg">
+</body>
+<p>
+    @Html.ActionLink("Add new Manager", "Create","Manager", null, new { @class = "btn btn-sm btn-success m5-1" })
+</p>
+<table class="jumbotron " border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

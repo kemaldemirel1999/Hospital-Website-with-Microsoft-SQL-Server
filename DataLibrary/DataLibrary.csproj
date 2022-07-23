@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBCE22D6-79A1-4843-9943-BA9019E5A62B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataLibrary</RootNamespace>
+    <AssemblyName>DataLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess\SqlDataAccess.cs" />
+    <Compile Include="Logic\AppointmentProcessor.cs" />
+    <Compile Include="Logic\ClinicProcessor.cs" />
+    <Compile Include="Logic\DoctorProcessor.cs" />
+    <Compile Include="Logic\EmployeeProcessor.cs" />
+    <Compile Include="Logic\LaborantProcessor.cs" />
+    <Compile Include="Logic\LaboratoryProcessor.cs" />
+    <Compile Include="Logic\ManagerProcessor.cs" />
+    <Compile Include="Logic\NurseProcessor.cs" />
+    <Compile Include="Logic\OtherStaffProcessor.cs" />
+    <Compile Include="Logic\PatientProcessor.cs" />
+    <Compile Include="Logic\PatientRoomProcessor.cs" />
+    <Compile Include="Logic\PrescriptionProcessor.cs" />
+    <Compile Include="Logic\RoomProcessor.cs" />
+    <Compile Include="Models\AppointmentModel.cs" />
+    <Compile Include="Models\ClinicModel.cs" />
+    <Compile Include="Models\DoctorModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\LaborantModel.cs" />
+    <Compile Include="Models\LaboratoryModel.cs" />
+    <Compile Include="Models\ManagementModel.cs" />
+    <Compile Include="Models\ManagerModel.cs" />
+    <Compile Include="Models\NurseModel.cs" />
+    <Compile Include="Models\OtherStaffModel.cs" />
+    <Compile Include="Models\PatientModel.cs" />
+    <Compile Include="Models\PatientRoomModel.cs" />
+    <Compile Include="Models\PrescriptionModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

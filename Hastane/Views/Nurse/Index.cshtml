@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Hastane.Models.NurseModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<body background="~/Images/nurse.jpg">
+</body>
+<h2></h2>
+
+<p>
+    @Html.ActionLink("Add Nurse", "Create","Nurse", null, new { @class = "btn btn-sm btn-success m5-1" })
+</p>
+<table class="jumbotron " border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room_responsible)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room_responsible)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

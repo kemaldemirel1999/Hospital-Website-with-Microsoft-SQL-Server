@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Hastane.Models.PrescriptionModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2></h2>
+<body background="~/Images/prescription.jpg">
+</body>
+<p>
+    @Html.ActionLink("Add new Prescription", "Create", "Prescription", null, new { @class = "btn btn-sm btn-success m5-1" })
+</p>
+<table class="jumbotron " border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pssn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Drug_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Given_date)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pssn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Drug_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Given_date)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
